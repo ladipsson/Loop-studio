@@ -1,0 +1,309 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alata&display=swap");
+
+:root {
+  --white: hsl(0, 0%, 100%);
+  --black: hsl(0, 0%, 0%);
+  --darkgray: hsl(0, 0%, 55%);
+  --veryDarkgray: hsl(0, 0%, 41%);
+  --alata: "Alata", sans-serif;
+  --joseFin: "Josefin Sans", sans-serif;
+}
+
+.inner-chamber {
+  width: 75vw;
+  margin: 5rem auto;
+}
+
+.creation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-transform: uppercase;
+  margin-bottom: 2rem;
+}
+
+.creation h2 {
+  font-family: var(--joseFin);
+  font-weight: 300;
+  font-size: 2.2rem;
+}
+
+.btn-mobile {
+  display: none;
+}
+.btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  background-color: var(--black);
+  color: var(--white);
+  padding: 0.8rem 2rem;
+  letter-spacing: 0.25rem;
+  font-size: 0.8rem;
+  font-family: var(--joseFin);
+  text-align: center;
+  transition: 0.3s ease-in;
+}
+
+.btn:hover {
+  background-color: var(--darkgray);
+}
+
+.imgs p {
+  position: absolute;
+  font-family: var(--joseFin);
+  font-weight: 300;
+  font-size: 2rem;
+  bottom: 40px;
+  width: 11rem;
+  margin-left: 2.5rem;
+  color: var(--white);
+}
+
+.cards-mobile {
+  display: none;
+}
+
+@media screen and (min-width: 1200px) {
+  .inner-chamber {
+    width: 75vw;
+    margin: 5rem auto;
+  }
+  
+  .creation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+  }
+  
+  .creation h2 {
+    font-family: var(--joseFin);
+    font-weight: 300;
+    font-size: 2.2rem;
+  }
+  
+  .btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    background-color: var(--black);
+    color: var(--white);
+    padding: 0.8rem 2rem;
+    letter-spacing: 0.25rem;
+    font-size: 0.8rem;
+    font-family: var(--joseFin);
+    text-align: center;
+    transition: 0.3s ease-in;
+  }
+  
+  .btn:hover {
+    background-color: var(--darkgray);
+  }
+  
+  .cards-list {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 1.4rem;
+  }
+  
+  .cards-large {
+    position: relative;
+    width: 100%;
+    cursor: pointer;
+  }
+  
+  .imgs {
+    position: relative;
+  }
+  
+  .imgs::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 99.2%;
+    background: rgba(83, 82, 81, 0.297);
+    opacity: 0;
+  }
+  
+  .imgs:hover::after {
+    opacity: 1;
+    font-weight: 400;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .inner-chamber {
+    width: 75vw;
+    margin: 5rem auto;
+  }
+  
+  .creation {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+  }
+  
+  .creation h2 {
+    font-family: var(--joseFin);
+    font-weight: 300;
+    font-size: clamp(2.2rem, 2.5rem, 3.5rem);
+  }
+  
+  .btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    background-color: var(--black);
+    color: var(--white);
+    padding: 0.8rem 2rem;
+    letter-spacing: 0.25rem;
+    font-size: clamp(0.8rem, 1.1rem, 2rem);
+    font-family: var(--joseFin);
+    text-align: center;
+    transition: 0.3s ease-in;
+  }
+  
+  .btn:hover {
+    background-color: var(--darkgray);
+  }
+  
+  .cards-list {
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.4rem;
+  }
+  
+  .cards-large {
+    position: relative;
+    width: 100%;
+    cursor: pointer;
+  }
+  
+  .imgs {
+    position: relative;
+  }
+  
+  .imgs::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 99.2%;
+    background: rgba(83, 82, 81, 0.297);
+    opacity: 0;
+  }
+  
+  .imgs:hover::after {
+    opacity: 1;
+    font-weight: 400;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .creation {
+    flex-direction: column;
+  }
+  
+  .creation h2 {
+    text-align: center;
+    font-size: clamp(0.5rem, 2.1rem, 2.5rem);
+    font-weight: 400;
+  }
+
+  .btn {
+    display: none;
+  }
+
+  .cards-large {
+    display: none;
+  }
+  .cards-list {
+    grid-template-columns: 1fr;
+    /* gap: 5rem; */
+    /* column-gap: 5rem; */
+  }
+  .cards-mobile {
+    display: block;
+    width: 100%;
+    padding-bottom: 0.7rem;
+  }
+
+  .imgs {
+    position: relative;
+    cursor: pointer;
+  }
+
+  .imgs::after {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 85%;
+    background: rgba(83, 82, 81, 0.297);
+    opacity: 0;
+  }
+  
+  .imgs:hover::after {
+    opacity: 1;
+    font-weight: 400;
+  }
+  .imgs p {
+    position: absolute;
+    font-family: var(--joseFin);
+    font-weight: 300;
+    font-size: clamp(1.4rem, 1.8rem, 4rem);
+    bottom: 1.5rem;
+    /* width: 11rem; */
+    margin-left: 1rem;
+    color: var(--white);
+    z-index: 500;
+  }
+
+  .btn-mobile {
+    display: block;
+    margin: 0 auto;
+    text-align: center;
+    padding-top: 1rem;
+  }
+  .btn-mo {
+    background: none;
+    cursor: pointer;
+    padding: 1rem 3rem;
+    text-transform: uppercase;
+    border: 1.2px solid var(--black);
+    font-family: var(--joseFin);
+    font-weight: 600;
+    font-size: clamp(1rem, 1.5rem, 2rem);
+    letter-spacing: 5px;
+  }
+
+  .btn-mo:hover {
+    border: none;
+    background-color: var(--black);
+    color: var(--white);
+  }
+}
+

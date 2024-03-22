@@ -1,0 +1,80 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alata&display=swap");
+
+:root {
+  --white: hsl(0, 0%, 100%);
+  --black: hsl(0, 0%, 0%);
+  --darkgray: hsl(0, 0%, 55%);
+  --veryDarkgray: hsl(0, 0%, 41%);
+  --alata: "Alata", sans-serif;
+  --joseFin: "Josefin Sans", sans-serif;
+}
+
+.desc h2 {
+  font-family: var(--joseFin);
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: clamp(20px, 8vw, 2.5rem);
+  padding-bottom: 2rem;
+}
+
+.desc p {
+  font-family: var(--joseFin);
+  font-size: clamp(16px, 7vw, 0.9rem);
+  line-height: 1.5;
+  color: var(--darkgray);
+}
+
+@media screen and (min-width: 1200px) {
+  .inner-container {
+    position: relative;
+    width: 75vw;
+    margin: 5.5rem auto;
+  }
+  
+  .inner-container img {
+    width: 51rem;
+  }
+  
+  .desc {
+    position: absolute;
+    right: 6rem;
+    bottom: -3rem;
+    font-family: var(--joseFin);
+    background-color: var(--white);
+    width: 25.8vw;
+    /* border: 1px solid var(--black); */
+    padding: 2rem;
+  }
+  
+}
+
+
+@media screen and (max-width: 1199px) {
+  .inner-container {
+    display: block;
+    width: 85vw;
+    margin: 5rem auto;
+  }
+
+  .desc {
+    position: static;
+    width: 90%;
+    padding: 0;
+    text-align: center;
+    margin: 2.3rem auto;
+  }
+
+  .inner-container img {
+    width: 100%;
+  }
+
+  .desc h2 {
+    font-weight: 400;
+  }
+
+  .desc p {
+    color: var(--veryDarkgray);
+    font-weight: 400;
+  }
+}

@@ -1,0 +1,269 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alata&display=swap");
+
+:root {
+  --white: hsl(0, 0%, 100%);
+  --black: hsl(0, 0%, 0%);
+  --darkgray: hsl(0, 0%, 55%);
+  --veryDarkgray: hsl(0, 0%, 41%);
+  --alata: "Alata", sans-serif;
+  --joseFin: "Josefin Sans", sans-serif;
+}
+
+nav {
+  font-family: var(--alata);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 75vw;
+  padding-top: 3rem;
+  margin: 0 auto;
+}
+
+.navlist {
+  list-style: none;
+  padding-right: 1.5rem;
+  color: var(--white);
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
+  position: relative;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--white);
+}
+.heading h1 {
+  font-family: var(--joseFin);
+  font-weight: 200;
+  color: var(--white);
+  font-size: clamp(2rem, 4.3vw, 6vw);
+  margin: 0 auto;
+}
+
+.nav-close {
+  /* width: 2rem; */
+  cursor: pointer;
+  /* position: absolute;
+  top: 1rem;
+  right: 1.5rem; */
+}
+
+.close {
+  width: 2rem;
+}
+
+@media screen and (min-width: 1200px) {
+  .herotab {
+    background-image: url(../../assets/desktop/image-hero.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 90vh;
+  }
+
+  .nav-open,
+  .nav-close {
+    display: none;
+  }
+
+  .navitems {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .navlist:hover {
+    color: var(--darkgray);
+  }
+
+  .navlist::after {
+    content: "";
+    height: 4px;
+    width: 40%;
+    background-color: var(--white);
+    position: absolute;
+    left: 0;
+    bottom: -12px;
+    opacity: 0;
+    transition: all 0.5s ease-in-out;
+    pointer-events: none;
+  }
+
+  .navlist:hover::after {
+    opacity: 1;
+  }
+
+  .heading {
+    width: 39vw;
+    border: 1px solid var(--white);
+    padding: 3rem;
+    margin-left: 12.5rem;
+    margin-top: 9rem;
+  }
+}
+
+@media (max-width: 1199px) {
+  nav {
+    width: 85vw;
+    padding-top: 4rem;
+    margin: 0 auto;
+  }
+
+  .herotab {
+    background-image: url(../../assets/desktop/image-hero.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 90vh;
+  }
+
+  .nav-close {
+    display: none;
+  }
+  .logo img {
+    width: 9rem;
+  }
+
+  .nav-menu {
+    display: none;
+  }
+
+  .navitems {
+    background-color: var(--black);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    width: 100%;
+    height: 90vh;
+    flex-direction: column;
+    text-transform: uppercase;
+    text-align: left;
+    position: absolute;
+    top: 0;
+    left: -100%;
+    padding-top: 12rem;
+    font-weight: 200;
+    transition: left 0.5s ease;
+  }
+
+  .active {
+    left: 0;
+    z-index: 1;
+    opacity: 1;
+    transition: left 0.5s ease;
+  }
+
+  .nav-open {
+    display: block;
+    width: 2rem;
+    cursor: pointer;
+    z-index: 1000;
+  }
+
+  .nav-link {
+    position: relative;
+    top: 0;
+    margin-left: 2rem;
+    padding-top: 12rem;
+    line-height: 2;
+    font-size: 2rem;
+    left: 1rem;
+  }
+  /* .close {
+    display: none;
+  }
+
+  .close.active {
+    display: block;
+    cursor: pointer;
+    width: 2rem;
+  } */
+
+  .heading {
+    width: 85vw;
+    border: 2px solid var(--white);
+    padding: 2rem;
+    margin: 0 auto;
+    margin-top: 10rem;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  nav {
+    width: 85vw;
+    padding-top: 4rem;
+    margin: 0 auto;
+  }
+
+  .herotab {
+    background-image: url(../../assets/mobile/image-hero.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100vw;
+    height: 700px;
+  }
+
+  .logo img {
+    width: 9rem;
+  }
+
+  .navitems {
+    background-color: var(--black);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: -100%;
+    transition: left 0.5s;
+    flex-direction: column;
+    text-transform: uppercase;
+    text-align: left;
+    font-weight: 200;
+  }
+
+  .nav-link {
+    position: relative;
+    top: 0;
+    margin-left: 2rem;
+    padding-top: 12rem;
+    line-height: 2;
+    font-size: 1.8rem;
+    left: 1rem;
+  }
+
+  .active {
+    display: block;
+    left: 0;
+    z-index: 1;
+    opacity: 1;
+    transition: left 0.5s;
+  }
+
+  .nav-open {
+    display: block;
+    width: 2rem;
+    cursor: pointer;
+    z-index: 1000;
+  }
+
+  /* .close {
+    display: none;
+  }
+
+  .close.active {
+    display: block;
+    cursor: pointer;
+    width: 2rem;
+  } */
+
+  .heading {
+    width: clamp(70vw, 60rem, 85vw);
+    /* width: 85vw; */
+    border: 2px solid var(--white);
+    padding: 1rem;
+    margin: 0 auto;
+    margin-top: 10rem;
+  }
+}
